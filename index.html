@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Acompanhe os principais indicadores do Bitcoin: Fear and Greed Index, Mayer Multiple e Dominância do Bitcoin, com gráficos atualizados em tempo real.">
+  <title>Indicadores Bitcoin | Fear & Greed Index</title>
+  <!-- Carregar o Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Indicadores do Bitcoin</h1>
+    <p>Acompanhe em tempo real os principais indicadores do mercado de Bitcoin.</p>
+  </header>
+
+  <!-- Fear and Greed Index -->
+  <section id="fear-greed">
+    <h2>Fear and Greed Index</h2>
+    <div class="indicator">
+      <div id="fear-greed-value">Carregando...</div>
+      <canvas id="fear-greed-chart" width="300" height="150"></canvas>
+    </div>
+    <p>O Fear and Greed Index mede o sentimento atual do mercado.</p>
+  </section>
+
+  <!-- Mayer Multiple -->
+  <section id="mayer-multiple">
+    <h2>Mayer Multiple</h2>
+    <div id="mayer-value">Carregando...</div>
+    <p>O Mayer Multiple é calculado pelo preço atual do Bitcoin dividido pela média móvel de 200 dias.</p>
+  </section>
+
+  <!-- Dominância do Bitcoin -->
+  <section id="bitcoin-dominance">
+    <h2>Dominância do Bitcoin</h2>
+    <div id="dominance-value">Carregando...</div>
+    <p>Percentual de dominância do Bitcoin em relação ao mercado total de criptomoedas.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 - Indicadores do Bitcoin. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script do seu código -->
+  <script src="script.js" defer></script>
+</body>
+
+</html>

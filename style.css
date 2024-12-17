@@ -1,0 +1,83 @@
+/* Reseta margens e paddings padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  background-color: #F7931A; /* Cor do Bitcoin */
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+section {
+  background-color: #1e1e1e;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #F7931A;
+}
+
+.indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#fear-greed-value,
+#dominance-value,
+#mayer-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+footer {
+  text-align: center;
+  background-color: #121212;
+  color: #fff;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+canvas {
+  margin-top: 10px;
+}
