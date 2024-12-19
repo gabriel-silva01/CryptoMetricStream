@@ -13,6 +13,7 @@ body {
   padding: 0;
 }
 
+/* Header */
 header {
   text-align: center;
   background-color: #F7931A; /* Cor do Bitcoin */
@@ -30,6 +31,31 @@ header p {
   color: #fff;
 }
 
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease-in-out, transform 0.2s;
+}
+
+nav ul li a:hover {
+  color: #121212;
+}
+
+/* Seções */
 section {
   background-color: #1e1e1e;
   margin: 20px auto;
@@ -63,9 +89,61 @@ h2 {
 
 p {
   font-size: 1rem;
-  color: #ccc;
+  color: #e0e0e0;
 }
 
+/* Campo de Contato */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+form label {
+  font-size: 1rem;
+  color: #fff;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #F7931A;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #ffae42;
+}
+
+form button:active {
+  transform: scale(0.98); /* Efeito de clique */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Realça o clique */
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #ffae42;
+  outline: none; /* Remove a borda padrão do navegador */
+  box-shadow: 0 0 5px rgba(247, 147, 26, 0.8); /* Destaca o campo ativo */
+}
+
+
+/* Rodapé */
 footer {
   text-align: center;
   background-color: #121212;
@@ -80,4 +158,166 @@ footer p {
 
 canvas {
   margin-top: 10px;
+}
+
+/* Estilos para o botão de voltar ao topo */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #F7931A;
+  color: white;
+  border: none;
+  border-radius: 50%; /* Garante o formato redondo */
+  padding: 15px; /* Tamanho do botão ajustado para maior área de clique */
+  font-size: 30px; /* Maior tamanho de texto para facilitar o clique */
+  cursor: pointer;
+  display: none; /* Inicialmente escondido */
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar um destaque */
+  transition: background-color 0.3s, transform 0.3s; /* Efeito suave ao passar o mouse */
+}
+
+#back-to-top:hover {
+  background-color: #45a049;
+  transform: scale(1.1); /* Aumenta levemente o botão ao passar o mouse */
+}
+
+#back-to-top:focus {
+  outline: 3px solid #ffae42; /* Indicador de foco para acessibilidade */
+}
+
+/* Feedback de sucesso e erro */
+.feedback {
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.feedback.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.feedback.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Estilos para o botão de menu e links */
+#menu-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  display: none; /* O botão de menu está escondido por padrão */
+}
+
+#nav-links {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#nav-links li {
+  margin-right: 20px;
+}
+
+#nav-links a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+}
+
+/* Estilos para telas maiores (acima de 768px) */
+@media (min-width: 769px) {
+  #menu-toggle {
+    display: none; /* Esconde o botão hambúrguer em telas maiores */
+  }
+
+  #nav-links {
+    display: flex; /* Exibe os links lado a lado em telas maiores */
+    justify-content: center; /* Ajuste para centralizar os links */
+  }
+
+  #nav-links li {
+    margin-right: 20px; /* Ajuste do espaço entre os links */
+  }
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  section {
+    margin: 40px auto; /* Aumentado para separar visualmente as seções */
+    padding: 30px; /* Mais espaço interno */
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .indicator {
+    align-items: flex-start;
+  }
+
+  #back-to-top {
+    bottom: 10px;
+    right: 10px;
+    padding: 15px;
+    font-size: 24px;
+  }
+
+  #menu-toggle {
+    display: block; /* Exibe o botão de menu em telas pequenas */
+  }
+
+  #nav-links {
+    display: none; /* Esconde os links por padrão */
+    flex-direction: row;
+    position: absolute;
+    top: 75px; /* Ajuste conforme a altura do menu */
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    justify-content: space-around; /* Garante que os links fiquem lado a lado */
+  }
+
+  #nav-links li {
+    text-align: left;
+    padding: 15px 0;
+    margin-right: 10px; /* Ajuste no espaço entre os links */
+  }
+
+  #nav-links li a {
+    color: #121212;
+  }
+
+  /* Quando o menu for visível */
+  #nav-links.show {
+    display: flex; /* Exibe os links */
+  }
+
+  /* Estilo de foco para acessibilidade */
+  #menu-toggle:focus {
+    outline: 3px solid #ffbf47; /* Foco no botão do menu */
+  }
 }
