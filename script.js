@@ -49,7 +49,7 @@ async function fetchData() {
     const mayerData = await mayerResponse.json()
 
     // Verificar a estrutura dos dados para debug
-    console.log("Dados do Mayer Multiple:", mayerData) // Exibe a estrutura dos dados no console
+    console.log("Dados do Mayer Multiple:", mayerData)
 
     // Extrair os preços de fechamento dos últimos 200 dias
     const closePrices = mayerData.prices.map((price) => price[1])
@@ -59,15 +59,10 @@ async function fetchData() {
     const averagePrice = sum / closePrices.length
 
     // Obter o preço atual do Bitcoin
-    const currentPrice = mayerData.prices[closePrices.length - 1][1] // Preço atual (último valor)
+    const currentPrice = mayerData.prices[closePrices.length - 1][1]
 
     // Calcular Mayer Multiple
     const mayerMultiple = currentPrice / averagePrice
-
-    // Exibir os valores
-    console.log("Preço atual:", currentPrice)
-    console.log("Média dos preços dos últimos 200 dias:", averagePrice)
-    console.log("Mayer Multiple calculado:", mayerMultiple) // Verifica o cálculo no console
 
     // Atualizar o valor do Mayer Multiple na página
     mayerValue.textContent = `Múltiplo Atual: ${mayerMultiple.toFixed(2)}`
@@ -89,3 +84,38 @@ async function fetchData() {
 
 // Executar fetchData ao carregar a página
 document.addEventListener("DOMContentLoaded", fetchData)
+
+// Selecionar o botão
+const backToTopButton = document.getElementById('back-to-top');
+
+// Mostrar o botão quando o usuário rolar para baixo
+window.onscroll = function() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    backToTopButton.style.display = "block"; // Exibir o botão
+  } else {
+    backToTopButton.style.display = "none"; // Esconder o botão
+  }
+};
+
+// Função para voltar ao topo
+backToTopButton.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' }); // Rolagem suave para o topo
+});
+
+// Selecionar os elementos
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+
+// Alternar a visibilidade do menu e atualizar o atributo 'aria-expanded'
+menuToggle.addEventListener('click', () => {
+  const isMenuOpen = navLinks.classList.toggle('show');
+  
+  // Atualiza o atributo 'aria-expanded' para melhorar a acessibilidade
+  menuToggle.setAttribute('aria-expanded', isMenuOpen);
+});
+
+// Adicionar eventos de mouse para esconder o menu quando o mouse sair da área
+navLinks.addEventListener('mouseleave', () => {
+  navLinks.classList.remove('show');
+  menuToggle.setAttribute('aria-expanded', 'false');
+});
