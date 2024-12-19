@@ -1,88 +1,138 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en"> <!-- Inglês como idioma padrão -->
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Acompanhe os principais indicadores do Bitcoin: Fear and Greed Index, Mayer Multiple e Dominância do Bitcoin, com gráficos atualizados em tempo real.">
-  <title>Indicadores Bitcoin | Fear & Greed Index</title>
-  <!-- Carregar o Chart.js -->
+    content="Track key Bitcoin market indicators: Fear and Greed Index, Mayer Multiple, and Bitcoin Dominance with real-time updated charts. Get insights on when to buy or sell Bitcoin.">
+  <meta name="keywords"
+    content="Bitcoin indicators, Fear and Greed Index, Mayer Multiple, Bitcoin Dominance, when to buy Bitcoin, when to sell Bitcoin, cryptocurrency market indicators">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="CryptometricStream">
+  <title>Bitcoin Indicators | Fear & Greed Index</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.0/build/cookieconsent.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.0/build/cookieconsent.min.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9560721874641370"
-     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TS2SMQCYZE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TS2SMQCYZE');
+  </script>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link rel="canonical" href="https://cryptometricstream.com/">
 </head>
 
 <body>
   <!-- Header -->
   <header>
-    <h1>Indicadores do Bitcoin</h1>
-    <p>Acompanhe em tempo real os principais indicadores do mercado de Bitcoin.</p>
+    <h1 id="header-title">Bitcoin Indicators</h1>
+    <p id="header-description">Track Bitcoin's market sentiment, fear & greed, Mayer Multiple, and dominance in
+      real-time. Make better decisions on when to buy or sell Bitcoin.</p>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="#fear-greed" id="nav-fear-greed">Fear and Greed Index</a></li>
+        <li><a href="#mayer-multiple" id="nav-mayer-multiple">Mayer Multiple</a></li>
+        <li><a href="#bitcoin-dominance" id="nav-dominance">Bitcoin Dominance</a></li>
+        <li><a href="#contact" id="nav-contact">Contact</a></li>
+      </ul>
+      <button id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span class="menu-icon" aria-hidden="true">☰</span> <!-- Hamburger menu icon -->
+      </button>
+    </nav>
   </header>
 
-  <!-- Anúncio do Google AdSense - logo após o header -->
-  <div class="adsense-ad">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9560721874641370"
-        crossorigin="anonymous"></script>
-    <!-- cryptometricstream -->
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-9560721874641370"
-        data-ad-slot="4934410327"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
+  <!-- Main Content -->
+  <main>
 
-  <!-- Fear and Greed Index -->
-  <section id="fear-greed">
-    <h2>Fear and Greed Index</h2>
-    <div class="indicator">
-      <div id="fear-greed-value">Carregando...</div>
-      <canvas id="fear-greed-chart" width="300" height="150"></canvas>
+    <!-- Google AdSense Ad - right after header -->
+    <div class="adsense-ad">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9560721874641370"
+        crossorigin="anonymous"></script>
+      <!-- cryptometricstream -->
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9560721874641370" data-ad-slot="4934410327"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </div>
-    <p>O Fear and Greed Index mede o sentimento atual do mercado.</p>
-  </section>
 
-  <!-- Anúncio do Google AdSense - entre os indicadores -->
-  <div class="adsense-ad">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9560721874641370"
+    <!-- Fear and Greed Index -->
+    <section id="fear-greed">
+      <h2>Fear and Greed Index</h2>
+      <div class="indicator">
+        <div id="fear-greed-value">Loading...</div>
+        <canvas id="fear-greed-chart" width="300" height="150"></canvas>
+      </div>
+      <p>The Fear and Greed Index measures the current Bitcoin market sentiment. It helps determine when it might be
+        time to buy or sell Bitcoin.</p>
+    </section>
+
+    <!-- Google AdSense Ad - between indicators -->
+    <div class="adsense-ad">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9560721874641370"
         crossorigin="anonymous"></script>
-    <!-- cryptometricstream -->
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-9560721874641370"
-        data-ad-slot="4934410327"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    <script>
+      <!-- cryptometricstream -->
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9560721874641370" data-ad-slot="4934410327"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
+      </script>
+    </div>
 
-  <!-- Mayer Multiple -->
-  <section id="mayer-multiple">
-    <h2>Mayer Multiple</h2>
-    <div id="mayer-value">Carregando...</div>
-    <p>O Mayer Multiple é calculado pelo preço atual do Bitcoin dividido pela média móvel de 200 dias.</p>
-  </section>
+    <!-- Mayer Multiple -->
+    <section id="mayer-multiple">
+      <h2>Mayer Multiple</h2>
+      <div id="mayer-value">Loading...</div>
+      <p>The Mayer Multiple is calculated by dividing the current Bitcoin price by the 200-day moving average. This
+        indicator helps determine Bitcoin's market position.</p>
+    </section>
 
-  <!-- Dominância do Bitcoin -->
-  <section id="bitcoin-dominance">
-    <h2>Dominância do Bitcoin</h2>
-    <div id="dominance-value">Carregando...</div>
-    <p>Percentual de dominância do Bitcoin em relação ao mercado total de criptomoedas.</p>
-  </section>
+    <!-- Bitcoin Dominance -->
+    <section id="bitcoin-dominance">
+      <h2>Bitcoin Dominance</h2>
+      <div id="dominance-value">Loading...</div>
+      <p>Bitcoin Dominance refers to the percentage of Bitcoin's market capitalization relative to the total
+        cryptocurrency market.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>If you have any questions or suggestions, feel free to contact us through the form below:</p>
+      <form name="contact" method="POST" data-netlify="true" action="/.netlify/functions/send-email">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <!-- ReCAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="6Lc1hZ8qAAAAAEz7RTKRBgHd_AKb7X_87ePzDHkp"></div>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2024 - Indicadores do Bitcoin. Todos os direitos reservados.</p>
+    <p id="footer-rights">&copy; 2024 - CryptometricStream. All rights reserved. <a href="privacy-policy.html"
+        id="footer-privacy-policy">Privacy Policy</a></p>
   </footer>
 
-  <!-- Script do seu código -->
+  <!-- Back to Top Button -->
+  <button id="back-to-top" title="Back to top">↑</button>
+
+  <!-- Scripts -->
   <script src="script.js" defer></script>
 </body>
 
