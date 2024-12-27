@@ -1,4 +1,4 @@
-// .netlify/functions/send-email.js
+/*  .netlify/functions/send-email.js
 
 const nodemailer = require("nodemailer")
 
@@ -43,4 +43,4 @@ exports.handler = async (event, context) => {
       body: JSON.stringify({ message: "Erro ao enviar e-mail" }),
     }
   }
-}
+}*/
