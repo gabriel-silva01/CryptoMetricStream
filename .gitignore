@@ -1,2 +1,2 @@
 .env 
-functions/sendEmail.js
+/functions/sendEmail.js
