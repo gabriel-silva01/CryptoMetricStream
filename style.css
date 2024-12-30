@@ -237,45 +237,6 @@ canvas {
   padding: 10px 15px;
 }
 
-.popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  border-radius: 10px;
-  max-width: 90%; /* Garante que o pop-up não ocupe mais do que 90% da largura da tela */
-  width: 400px; /* Define uma largura padrão para o pop-up */
-  box-sizing: border-box; /* Inclui o padding no cálculo da largura total */
-  z-index: 9999; /* Coloca o pop-up acima de outros elementos */
-}
-
-.popup button {
-  background-color: #ff5733;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 10px;
-  width: 100%; /* O botão ocupará toda a largura do pop-up */
-}
-
-@media (max-width: 600px) {
-  .popup {
-    width: 80%; /* Para telas pequenas, o pop-up ocupará 80% da largura da tela */
-    padding: 15px;
-  }
-
-  .popup button {
-    padding: 12px 0; /* Ajusta o padding do botão em telas pequenas */
-    font-size: 14px; /* Ajusta o tamanho da fonte do botão */
-  }
-}
-
 /* Estilos para telas maiores (acima de 768px) */
 @media (min-width: 769px) {
   #menu-toggle {
