@@ -86,39 +86,42 @@ async function fetchData() {
 document.addEventListener("DOMContentLoaded", fetchData)
 
 // Selecionar o botão
-const backToTopButton = document.getElementById('back-to-top');
+const backToTopButton = document.getElementById("back-to-top")
 
 // Mostrar o botão quando o usuário rolar para baixo
-window.onscroll = function() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    backToTopButton.style.display = "block"; // Exibir o botão
+window.onscroll = function () {
+  if (
+    document.body.scrollTop > 100 ||
+    document.documentElement.scrollTop > 100
+  ) {
+    backToTopButton.style.display = "block" // Exibir o botão
   } else {
-    backToTopButton.style.display = "none"; // Esconder o botão
+    backToTopButton.style.display = "none" // Esconder o botão
   }
-};
+}
 
 // Função para voltar ao topo
-backToTopButton.addEventListener('click', function() {
-  window.scrollTo({ top: 0, behavior: 'smooth' }); // Rolagem suave para o topo
-});
+backToTopButton.addEventListener("click", function () {
+  window.scrollTo({ top: 0, behavior: "smooth" }) // Rolagem suave para o topo
+})
 
 // Selecionar os elementos
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
+const menuToggle = document.getElementById("menu-toggle")
+const navLinks = document.getElementById("nav-links")
 
 // Alternar a visibilidade do menu e atualizar o atributo 'aria-expanded'
-menuToggle.addEventListener('click', () => {
-  const isMenuOpen = navLinks.classList.toggle('show');
-  
+menuToggle.addEventListener("click", () => {
+  const isMenuOpen = navLinks.classList.toggle("show")
+
   // Atualiza o atributo 'aria-expanded' para melhorar a acessibilidade
-  menuToggle.setAttribute('aria-expanded', isMenuOpen);
-});
+  menuToggle.setAttribute("aria-expanded", isMenuOpen)
+})
 
 // Adicionar eventos de mouse para esconder o menu quando o mouse sair da área
-navLinks.addEventListener('mouseleave', () => {
-  navLinks.classList.remove('show');
-  menuToggle.setAttribute('aria-expanded', 'false');
-});
+navLinks.addEventListener("mouseleave", () => {
+  navLinks.classList.remove("show")
+  menuToggle.setAttribute("aria-expanded", "false")
+})
 
 //Submit HTML forms with AJAX
 const handleSubmit = (event) => {
@@ -132,7 +135,7 @@ const handleSubmit = (event) => {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString(),
   })
-    .then(() => console.log("Form successfully submitted"))
+    .then(() => navigate("Form successfully submitted"))
     .catch((error) => alert(error))
 }
 
