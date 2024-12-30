@@ -120,7 +120,7 @@ navLinks.addEventListener('mouseleave', () => {
   menuToggle.setAttribute('aria-expanded', 'false');
 });
 
-//Formulário de Envio via AJAX
+/*Formulário de Envio via AJAX
 const handleSubmit = (event) => {
   event.preventDefault()
 
@@ -134,6 +134,4 @@ const handleSubmit = (event) => {
   })
     .then(() => console.log("Form successfully submitted"))
     .catch((error) => alert(error))
-}
-
-document.querySelector("form").addEventListener("submit", handleSubmit)
+}*/
