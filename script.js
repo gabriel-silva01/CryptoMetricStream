@@ -125,84 +125,55 @@ navLinks.addEventListener("mouseleave", () => {
 
 // Submit HTML forms with AJAX
 const handleSubmit = (event) => {
-  event.preventDefault();
+  event.preventDefault()
 
-  const myForm = event.target;
-  const formData = new FormData(myForm);
-  const errors = [];
-  const fields = ["name", "email", "message"]; // Campos obrigatórios
+  const myForm = event.target
+  const formData = new FormData(myForm)
+  const errors = []
+  const fields = ["name", "email", "message"] // Campos obrigatórios
 
   // Limpar erros anteriores
-  document.getElementById("form-errors").style.display = "none";
-  document.getElementById("form-errors").querySelector("ul").innerHTML = "";
+  document.getElementById("form-errors").style.display = "none"
+  document.getElementById("form-errors").querySelector("ul").innerHTML = ""
 
   // Validação visual e coleta de erros
   fields.forEach((field) => {
-    const input = document.getElementById(field);
+    const input = document.getElementById(field)
     if (!input.value.trim()) {
-      errors.push(`${field} is required`);
-      input.style.borderColor = "red"; // Adiciona a borda vermelha para campos obrigatórios não preenchidos
+      errors.push(`${field} is required`)
+      input.style.borderColor = "red" // Adiciona a borda vermelha para campos obrigatórios não preenchidos
     } else {
-      input.style.borderColor = ""; // Limpa a borda vermelha se o campo estiver preenchido
+      input.style.borderColor = "" // Limpa a borda vermelha se o campo estiver preenchido
     }
-  });
+  })
 
   if (errors.length > 0) {
     // Exibe as mensagens de erro
-    const errorList = document.getElementById("form-errors").querySelector("ul");
+    const errorList = document.getElementById("form-errors").querySelector("ul")
     errors.forEach((error) => {
-      const li = document.createElement("li");
-      li.textContent = error;
-      errorList.appendChild(li);
-    });
-    document.getElementById("form-errors").style.display = "block";
-    return; // Não envia o formulário se houver erros
+      const li = document.createElement("li")
+      li.textContent = error
+      errorList.appendChild(li)
+    })
+    document.getElementById("form-errors").style.display = "block"
+    return // Não envia o formulário se houver erros
   }
 
-  // Se não houver erros, faz o envio do formulário
+  // Se não houver erros, faz o envio do formulário via fetch
   fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString(),
   })
     .then(() => {
-      // Exibe a mensagem de sucesso (pop-up)
-      showPopup("success");
+      // Exibe o pop-up de sucesso
+      document.getElementById("success-message").style.display = "block"
       // Opcional: esconde o formulário após envio
-      myForm.style.display = "none";
+      myForm.style.display = "none"
     })
     .catch((error) => {
-      // Exibe a mensagem de erro (pop-up)
-      showPopup("error");
-      console.error("An error occurred: ", error);
-    });
+      alert("An error occurred: " + error)
+    })
 }
 
-// Função para exibir o pop-up de sucesso ou erro
-const showPopup = (status) => {
-  const popup = document.createElement('div');
-  popup.setAttribute('role', 'dialog');
-  popup.setAttribute('aria-live', 'assertive');
-  popup.classList.add('popup'); // Certifique-se de ter a classe CSS para pop-ups
-
-  if (status === "success") {
-    popup.innerHTML = `
-      <p>Your message has been sent successfully!</p>
-      <button onclick="window.location.href = '/'">Back to Homepage</button>
-    `;
-  } else if (status === "error") {
-    popup.innerHTML = `
-      <p>Sorry, there was an error sending your message. Please try again later.</p>
-      <button onclick="window.location.href = '/'">Back to Homepage</button>
-    `;
-  }
-
-  document.body.appendChild(popup);
-
-  // Fechar o pop-up quando o usuário clicar no botão
-  popup.querySelector('button').addEventListener('click', () => {
-    document.body.removeChild(popup);
-  });
-};
-
-document.querySelector("form").addEventListener("submit", handleSubmit);
+document.querySelector("form").addEventListener("submit", handleSubmit)
