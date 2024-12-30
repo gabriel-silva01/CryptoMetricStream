@@ -129,51 +129,14 @@ const handleSubmit = (event) => {
 
   const myForm = event.target
   const formData = new FormData(myForm)
-  const errors = []
-  const fields = ["name", "email", "message"] // Campos obrigatórios
 
-  // Limpar erros anteriores
-  document.getElementById("form-errors").style.display = "none"
-  document.getElementById("form-errors").querySelector("ul").innerHTML = ""
-
-  // Validação visual e coleta de erros
-  fields.forEach((field) => {
-    const input = document.getElementById(field)
-    if (!input.value.trim()) {
-      errors.push(`${field} is required`)
-      input.style.borderColor = "red" // Adiciona a borda vermelha para campos obrigatórios não preenchidos
-    } else {
-      input.style.borderColor = "" // Limpa a borda vermelha se o campo estiver preenchido
-    }
-  })
-
-  if (errors.length > 0) {
-    // Exibe as mensagens de erro
-    const errorList = document.getElementById("form-errors").querySelector("ul")
-    errors.forEach((error) => {
-      const li = document.createElement("li")
-      li.textContent = error
-      errorList.appendChild(li)
-    })
-    document.getElementById("form-errors").style.display = "block"
-    return // Não envia o formulário se houver erros
-  }
-
-  // Se não houver erros, faz o envio do formulário via fetch
   fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString(),
   })
-    .then(() => {
-      // Exibe o pop-up de sucesso
-      document.getElementById("success-message").style.display = "block"
-      // Opcional: esconde o formulário após envio
-      myForm.style.display = "none"
-    })
-    .catch((error) => {
-      alert("An error occurred: " + error)
-    })
+    .then(() => alert("Form successfully submitted"))
+    .catch((error) => alert(error))
 }
 
 document.querySelector("form").addEventListener("submit", handleSubmit)

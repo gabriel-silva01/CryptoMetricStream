@@ -39,7 +39,7 @@
         <li><a href="#fear-greed" id="nav-fear-greed">Fear and Greed Index</a></li>
         <li><a href="#mayer-multiple" id="nav-mayer-multiple">Mayer Multiple</a></li>
         <li><a href="#bitcoin-dominance" id="nav-dominance">Bitcoin Dominance</a></li>
-        <li><a href="contact.html" id="nav-contact">Contact</a></li>
+        <li><a href="#contact" id="nav-contact">Contact</a></li>
       </ul>
       <button id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
         <span class="menu-icon" aria-hidden="true">☰</span> <!-- Hamburger menu icon -->
@@ -101,6 +101,31 @@
         cryptocurrency market.</p>
     </section>
 
+    <section aria-labelledby="contact-form">
+      <h2 id="contact-form">Get in Touch</h2>
+      <p>If you have any questions or suggestions, please contact us using the form below.</p>
+    
+      <form 
+        id="contact" 
+        name="contact" 
+        method="POST" 
+        data-netlify="true" 
+        >
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required aria-required="true" placeholder="Your name">
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required aria-required="true" placeholder="Your email">
+    
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required aria-required="true" placeholder="Your message"></textarea>
+    
+        <!-- ReCAPTCHA 
+            <div class="g-recaptcha" data-sitekey="6Lc1hZ8qAAAAAEz7RTKRBgHd_AKb7X_87ePzDHkp"></div> -->
+        <button type="submit">Send</button>
+      </form>
+    </section>
   </main>
 
   <!-- Footer -->
