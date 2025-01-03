@@ -24,7 +24,6 @@
   </script>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <link rel="canonical" href="https://cryptometricstream.com/">
 </head>
 
@@ -109,7 +108,8 @@
         id="contact" 
         name="contact" 
         method="POST" 
-        data-netlify="true" 
+        data-netlify="true"
+        data-netlify-recaptcha="true"
         >
         
         <label for="name">Name:</label>
@@ -120,9 +120,6 @@
     
         <label for="message">Message:</label>
         <textarea id="message" name="message" required aria-required="true" placeholder="Your message"></textarea>
-    
-        <!-- Google reCAPTCHA -->
-            <div class="g-recaptcha" data-sitekey="6Ld0AqoqAAAAANvHX3Xfjt6QyUJNKNSkCIRXXt3_"></div>
 
         <button type="submit">Send</button>
       </form>

@@ -130,43 +130,13 @@ const handleSubmit = (event) => {
   const myForm = event.target
   const formData = new FormData(myForm)
 
-  // Obtém a resposta do reCAPTCHA v2
-  const recaptchaResponse = grecaptcha.getResponse()
-
-  if (!recaptchaResponse) {
-    alert("Please complete the reCAPTCHA")
-    return
-  }
-
-  const formDataObject = {}
-  formData.forEach((value, key) => {
-    formDataObject[key] = value
-  })
-
-  fetch("/.netlify/functions/verify-recaptcha", {
+  fetch("/", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      recaptchaResponse,
-      formData: formDataObject,
-    }),
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
   })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.message === "Form successfully submitted!") {
-        // Exibe a mensagem de sucesso
-        document.getElementById("success-message").style.display = "block"
-        // Opcional: esconde o formulário após envio
-        myForm.style.display = "none"
-      } else {
-        alert("Error: " + data.message)
-      }
-    })
-    .catch((error) => {
-      alert("An error occurred: " + error)
-    })
+    .then(() => alert("Form successfully submitted"))
+    .catch((error) => alert(error))
 }
 
 document.querySelector("form").addEventListener("submit", handleSubmit)
