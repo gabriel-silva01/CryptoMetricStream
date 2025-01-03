@@ -135,6 +135,57 @@
   <!-- Back to Top Button -->
   <button id="back-to-top" title="Back to top">↑</button>
 
+  <script>
+    // Configuração do Cookie Consent
+    window.addEventListener("load", function () {
+      window.cookieconsent.initialise({
+        palette: {
+          popup: { background: "#343a40", text: "#f8f9fa" },
+          button: { background: "#007bff", text: "#ffffff" },
+        },
+        theme: "classic",
+        position: "bottom-left",
+        content: {
+          message:
+            "We use cookies to personalize content, ads, and provide a better experience.",
+          dismiss: "Agree",
+          deny: "Decline",
+          link: "Learn more",
+          href: "privacy-policy.html",
+        },
+        type: "opt-in", // Exigir consentimento ativo para cookies
+        onInitialise: function (status) {
+          if (this.hasConsented()) {
+            enableCookies();
+          }
+        },
+        onStatusChange: function (status) {
+          if (this.hasConsented()) {
+            enableCookies();
+          } else {
+            disableCookies();
+          }
+        },
+      });
+    });
+
+    function enableCookies() {
+      // Aqui você pode habilitar os cookies de rastreamento/funcionais
+      gtag("consent", "update", {
+        ad_storage: "granted",
+        analytics_storage: "granted",
+      });
+    }
+
+    function disableCookies() {
+      // Aqui você pode desativar os cookies de rastreamento/funcionais
+      gtag("consent", "update", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+      });
+    }
+  </script>
+
   <!-- Scripts -->
   <script src="script.js" defer></script>
 </body>
