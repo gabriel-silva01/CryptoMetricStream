@@ -19,6 +19,20 @@ header {
   background-color: #F7931A; /* Cor do Bitcoin */
   padding: 20px;
   margin-bottom: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+}
+
+header #logotipo {
+  display: flex;
+}
+
+header .logo {
+  height: 50px; /* Tamanho do logo */
+  width: auto;
 }
 
 header h1 {
@@ -94,6 +108,25 @@ h2 {
 p {
   font-size: 1rem;
   color: #e0e0e0;
+}
+
+/*espaçamento sem utilizar tag br*/
+#fear-greed-text p, 
+#mayer-multiple-text p, 
+#bitcoin-dominance-text p {
+  margin: 0.75rem 0;
+}
+
+#fear-greed-text ul li, 
+#mayer-multiple-text ul li, 
+#bitcoin-dominance-text ul li {
+  padding-left: 0; /* Remove o recuo padrão */
+  margin-left: 0;  /* Remove a margem padrão */
+  list-style-position: inside; /* Faz as bolinhas ficarem alinhadas ao texto */
+}
+
+h3 {
+  color: #F7931A;
 }
 
 /* Campo de Contato */
@@ -273,10 +306,6 @@ canvas {
     padding: 30px; /* Mais espaço interno */
   }
 
-  h2 {
-    font-size: 1.5rem;
-  }
-
   .indicator {
     align-items: flex-start;
   }
@@ -293,10 +322,10 @@ canvas {
   }
 
   #nav-links {
-    display: none; /* Esconde os links por padrão */
+    display: none; 
     flex-direction: row;
     position: absolute;
-    top: 150px; /* Ajuste conforme a altura do menu */
+    top: 80px; /* Ajuste conforme a altura do menu */
     left: 0;
     background-color: #fff;
     width: 100%;

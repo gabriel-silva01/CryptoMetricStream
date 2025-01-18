@@ -13,7 +13,7 @@
   <meta name="author" content="CryptometricStream">
 
   <title>Bitcoin Indicators | Fear & Greed Index</title>
-  
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.0/build/cookieconsent.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.0/build/cookieconsent.min.js"></script>
 
@@ -40,13 +40,16 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
+
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
   <header>
-    <h1 id="header-title">Bitcoin Indicators</h1>
-    <p id="header-description">Track Bitcoin's market sentiment, fear & greed, Mayer Multiple, and dominance in
-      real-time. Make better decisions on when to buy or sell Bitcoin.</p>
+    <a href="index.html" id="logotipo">
+      <img src="./assets/Logo_Crypto_Metric_Stream-removebg-preview.png" alt="Logo Crypto Metric Stream" class="logo">
+    </a>
+
     <nav>
       <ul id="nav-links">
         <li><a href="#fear-greed" id="nav-fear-greed">Fear / Greed Ind.</a></li>
@@ -61,11 +64,15 @@
   </header>
 
   <main>
-
     <!--AdsTerra Script NativeBanner_1-->
-    <script async="async" data-cfasync="false"
+    <!--<script async="async" data-cfasync="false"
       src="//pl25495506.profitablecpmrate.com/60cb0c59c40d02d6a3c2b9782560841a/invoke.js"></script>
-    <div id="container-60cb0c59c40d02d6a3c2b9782560841a"></div>
+    <div id="container-60cb0c59c40d02d6a3c2b9782560841a"></div>-->
+
+    <section>
+      <p id="header-description"><strong>Track Bitcoin's market sentiment, fear & greed, Mayer Multiple, and dominance in
+        real-time. Make better decisions on when to buy or sell Bitcoin.</strong></p>
+    </section>
 
     <!-- Fear and Greed Index -->
     <section id="fear-greed">
@@ -74,53 +81,247 @@
         <div id="fear-greed-value">Loading...</div>
         <canvas id="fear-greed-chart" width="300" height="150"></canvas>
       </div>
-      <p>The Fear and Greed Index measures the current Bitcoin market sentiment. It helps determine when it might be
-        time to buy or sell Bitcoin.</p>
+      <a href="#fear-greed-text">What's the Fear and Greed Index?</a>
     </section>
 
     <!--AdsTerra Script Popunder_1-->
-    <script type='text/javascript'
-      src='//pl25540290.profitablecpmrate.com/20/43/20/2043208c5179a2181ebf31fdbf549a76.js'></script>
+    <!--<script type='text/javascript'
+      src='//pl25540290.profitablecpmrate.com/20/43/20/2043208c5179a2181ebf31fdbf549a76.js'></script>-->
 
     <!-- Mayer Multiple -->
     <section id="mayer-multiple">
       <h2>Mayer Multiple</h2>
       <div id="mayer-value">Loading...</div>
-      <p>The Mayer Multiple is calculated by dividing the current Bitcoin price by the 200-day moving average. This
-        indicator helps determine Bitcoin's market position.</p>
+      <a href="#mayer-multiple-text">What's the Mayer Multiple?</a>
     </section>
-
-    <!--AdsTerra Script-->
-    <script async="async" data-cfasync="false"
-      src="//pl25495506.profitablecpmrate.com/60cb0c59c40d02d6a3c2b9782560841a/invoke.js"></script>
-    <div id="container-60cb0c59c40d02d6a3c2b9782560841a"></div>
 
     <!-- Bitcoin Dominance -->
     <section id="bitcoin-dominance">
       <h2>Bitcoin Dominance</h2>
       <div id="dominance-value">Loading...</div>
-      <p>Bitcoin Dominance refers to the percentage of Bitcoin's market capitalization relative to the total
-        cryptocurrency market.</p>
+      <a href="#bitcoin-dominance-text">What's the Bitcoin Dominance?</a>
+    </section>
+
+    <section id="fear-greed-text">
+      <h3>What is the Bitcoin Fear and Greed Index?</h3>
+      <p>
+        The Bitcoin Fear and Greed Index is a widely used metric for measuring market sentiment regarding Bitcoin and
+        other
+        cryptocurrencies. It reflects the balance between two dominant emotions: fear, which can lead to excessive
+        selling, and
+        greed, which may result in impulsive buying.</p>
+      <p>
+        This index is regularly updated, providing a real-time view of investor behavior and cryptocurrency market
+        trends. It is
+        based on factors such as volatility, market volume, social media activity, Bitcoin dominance, and search trends.
+      </p>
+      <h3>What is the Purpose of the Fear and Greed Index?</h3>
+      <p>
+        The Fear and Greed Index is an essential tool for anyone interested in investing in Bitcoin or trading
+        cryptocurrencies.
+        It helps investors identify moments of:
+      </p>
+      <ul>
+        <li>
+          Extreme Fear: Indicates that the market is bearish, which can be a buying opportunity since prices are likely
+          undervalued.
+        </li>
+        <li>
+          Extreme Greed: Shows that the market is bullish, signaling a potential bubble and an opportunity to take
+          profits before
+          a correction.
+        </li>
+      </ul>
+      <p>
+        By using this indicator, you can avoid emotional decisions and improve your investment strategy with objective
+        data.
+      </p>
+      <h3>How to Interpret the Fear and Greed Index?</h3>
+      <p>
+        The index ranges from 0 to 100, divided into five main categories:
+      </p>
+      <ul>
+        <li>
+          0 to 24 - Extreme Fear: The market is pessimistic. Prices may be undervalued, presenting a buying opportunity.
+        </li>
+        <li>
+          25 to 49 - Fear: There is a downward trend, but less pronounced. It’s still a cautious moment to enter the
+          market.
+        </li>
+        <li>
+          50 - Neutral: The market is balanced, with no clear direction.
+        </li>
+        <li>
+          51 to 74 - Greed: Indicates an upward trend, but entering the market might be risky due to potential
+          corrections.
+        </li>
+        <li>
+          75 to 100 - Extreme Greed: A sign of overbuying, where prices are high and might drop soon.
+        </li>
+      </ul>
+      <p></p>
+      <h3>Why is the Fear and Greed Index Important?</h3>
+      <p>
+        The index is a tool that simplifies the analysis of cryptocurrency market trends, helping you:
+      </p>
+      <ul>
+        <li>
+          Avoid emotional decisions driven by panic or euphoria.
+        </li>
+        <li>
+          Identify strategic moments to buy Bitcoin or sell your cryptocurrencies.
+        </li>
+        <li>
+          Stay updated on the real-time Bitcoin market sentiment.
+        </li>
+      </ul>
+      <p>
+        With this index, you can plan your investments more effectively, reducing risks and maximizing returns in the
+        cryptocurrency market.
+      </p>
+      <p>
+        Visit our website to check the Bitcoin Fear and Greed Index in real-time and stay ahead in the market!
+      </p>
+    </section>
+
+    <section id="mayer-multiple-text">
+      <h3>What is the Mayer Multiple of Bitcoin?</h3>
+      <p>
+        The <strong>Mayer Multiple</strong> is a widely used indicator to evaluate whether the price of
+        <strong>Bitcoin</strong> is above or below its long-term average value. It is calculated by dividing the current
+        Bitcoin price by its 200-day moving average. This metric helps investors identify overbought or oversold moments
+        in
+        the cryptocurrency market.
+      </p>
+      <p>
+        Created by Trace Mayer, the indicator is especially useful for analyzing <strong>Bitcoin market cycles</strong>,
+        making it a popular tool among traders and investors looking to maximize profits and minimize risks.
+      </p>
+
+      <h3>What is the Purpose of the Mayer Multiple?</h3>
+      <p>
+        The <strong>Mayer Multiple</strong> serves as a reference to assess whether <strong>Bitcoin</strong> is being
+        traded
+        at a fair price relative to its long-term historical performance. It helps to:
+      </p>
+      <ul>
+        <li><strong>Identify overbought periods:</strong> When the multiple is significantly above 1, it may indicate
+          that the
+          price is too high, suggesting a potential correction.</li>
+        <li><strong>Detect oversold periods:</strong> Values below 1 suggest that Bitcoin's price is under its
+          historical
+          average, which could be a good buying opportunity.</li>
+        <li><strong>Make informed decisions:</strong> By using the Mayer Multiple, investors avoid emotional decisions
+          and
+          base their strategies on historical data and market trends.</li>
+      </ul>
+      <p></p>
+      <h3>How to Interpret the Mayer Multiple?</h3>
+      <p>
+        The <strong>Mayer Multiple</strong> is interpreted as follows:
+      </p>
+      <ul>
+        <li><strong>Below 1.0:</strong> Bitcoin's price is below its 200-day moving average, indicating a potential
+          buying
+          opportunity.</li>
+        <li><strong>Equal to 1.0:</strong> The price is aligned with the 200-day moving average, suggesting market
+          stability.
+        </li>
+        <li><strong>Between 1.0 and 2.4:</strong> A common range during bull markets. It might be a good opportunity to
+          monitor growth trends.</li>
+        <li><strong>Above 2.4:</strong> Considered a sign of extreme overbought conditions. Historically, such high
+          prices are
+          often followed by significant corrections.</li>
+      </ul>
+      <p></p>
+      <h3>Why is the Mayer Multiple Important?</h3>
+      <p>
+        The <strong>Mayer Multiple</strong> is an essential tool for anyone who wants to understand <strong>Bitcoin
+          price
+          cycles</strong> and make more informed investment decisions. It provides:
+      </p>
+      <ul>
+        <li><strong>A clear view of Bitcoin's market value</strong> in relation to its historical performance.</li>
+        <li><strong>A data-driven strategy</strong> to avoid impulsive decisions.</li>
+        <li><strong>The ability to identify ideal buying or selling moments,</strong> helping to maximize profits.</li>
+      </ul>
+      <p>
+        Visit our website to check the <strong>Bitcoin Mayer Multiple in real-time</strong> and stay informed about
+        cryptocurrency market trends!
+      </p>
+    </section>
+
+    <section id="bitcoin-dominance-text">
+      <h3>What is Bitcoin Dominance?</h3>
+      <p>
+        <strong>Bitcoin Dominance</strong> is an indicator that measures the proportion of <strong>Bitcoin's market
+          value</strong> relative to the total market value of all cryptocurrencies. This metric is widely used to assess
+        Bitcoin's relative strength in the cryptocurrency market and to understand sector trends.
+      </p>
+      <p>
+        Bitcoin dominance is expressed as a percentage and can fluctuate based on the performance of <strong>Bitcoin</strong>
+        and altcoins (other cryptocurrencies). It is a crucial metric for investors and traders as it helps identify market
+        movements and predict shifts in dynamics between Bitcoin and altcoins.
+      </p>
+      
+      <h3>What is the Purpose of Bitcoin Dominance?</h3>
+      <p>
+        <strong>Bitcoin Dominance</strong> serves as a tool to understand the market's preference between
+        <strong>Bitcoin</strong> and altcoins. It can be used to:
+      </p>
+      <ul>
+        <li><strong>Analyze market trends:</strong> An increase in dominance typically indicates that investors favor Bitcoin
+          as a store of value, especially during periods of market uncertainty.</li>
+        <li><strong>Identify investment opportunities:</strong> When Bitcoin dominance decreases, altcoins may be gaining
+          strength, representing potential profit opportunities.</li>
+        <li><strong>Evaluate market cycles:</strong> Bitcoin dominance can help predict phases of altcoin bull or bear markets
+          and adjust investment strategies accordingly.</li>
+      </ul>
+      <p></p>
+      <h3>How to Interpret Bitcoin Dominance?</h3>
+      <p>
+        <strong>Bitcoin Dominance</strong> can be interpreted in several ways, depending on market behavior:
+      </p>
+      <ul>
+        <li><strong>High Dominance (above 50%):</strong> Bitcoin dominates the cryptocurrency market, indicating that most
+          investors trust it as the primary asset. This is common during periods of uncertainty or when the market focuses on
+          safety.</li>
+        <li><strong>Low Dominance (below 50%):</strong> Altcoins are gaining traction in the market. This may indicate growing
+          interest in alternative projects and greater diversification within the cryptocurrency sector.</li>
+        <li><strong>Rapid Fluctuations:</strong> Quick changes in dominance can signal shifts in investor appetite, such as
+          transitioning from Bitcoin to altcoins or vice versa.</li>
+      </ul>
+      <p></p>
+      <h3>Why is Bitcoin Dominance Important?</h3>
+      <p>
+        <strong>Bitcoin Dominance</strong> is a critical indicator for understanding cryptocurrency market dynamics. It
+        provides:
+      </p>
+      <ul>
+        <li><strong>A clear view of investor behavior</strong> regarding Bitcoin and altcoins.</li>
+        <li><strong>Insights into capital flows in the cryptocurrency market,</strong> helping to identify trends and
+          opportunities.</li>
+        <li><strong>Valuable data for investment strategies,</strong> enabling portfolio adjustments based on market
+          conditions.</li>
+      </ul>
+      <p>
+        Visit our website to check the <strong>Bitcoin Dominance in real-time</strong> and stay updated on the latest
+        cryptocurrency market trends!
+      </p>
     </section>
 
     <section aria-labelledby="contact-form">
       <h2 id="contact-form">Contact</h2>
       <p>If you have any questions or suggestions, please contact us using the form below.</p>
-    
-      <form 
-        id="contact" 
-        name="contact" 
-        method="POST" 
-        data-netlify="true"
-        data-netlify-recaptcha="true"
-        >
-        
+
+      <form id="contact" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required aria-required="true" placeholder="Your name">
-    
+
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required aria-required="true" placeholder="Your email">
-    
+
         <label for="message">Message:</label>
         <textarea id="message" name="message" required aria-required="true" placeholder="Your message"></textarea>
 
