@@ -73,6 +73,9 @@ nav ul li a:hover {
   color: #121212;
 }
 
+.ads-container {
+  text-align: center;
+}
 /* Seções */
 section {
   background-color: #1e1e1e;
