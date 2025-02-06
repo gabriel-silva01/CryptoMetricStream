@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Configuração básica do documento -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Metadados para SEO e compartilhamento em redes sociais -->
+  <meta name="description"
+    content="Page that displays the prices and price charts of cryptocurrencies with real-time updates.">
+  <meta name="keywords" content="cryptocurrency, bitcoin, ethereum, solana, trump coin, melania trump coin">
+  <meta name="author" content="Your Name or Company">
+  <meta property="og:title" content="Cryptocurrency Prices and Charts">
+  <meta property="og:description"
+    content="Track the prices and price changes of Bitcoin, Ethereum, Solana, and other cryptocurrencies in real-time.">
+  <meta property="og:image" content="preview-image-url">
+  <meta property="og:url" content="https://www.cryptometricstream.com/">
+
+  <!-- Título da página -->
+  <title>Cryptocurrency Prices</title>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9560721874641370"
+    crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-9560721874641370">
+
+  <!-- Link para CSS personalizado -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Consentimento de Cookies -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.0/build/cookieconsent.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.0/build/cookieconsent.min.js"></script>
+
+  <!-- Biblioteca de gráficos e externas -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+
+  <!-- Ícone da aba do navegador -->
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+
+  <!-- Scripts -->
+  <script src="scripts.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" id="logotipo">
+      <img src="./assets/Logo_Crypto_Metric_Stream-removebg-preview.png" alt="Logo Crypto Metric Stream" class="logo">
+    </a>
+
+    <nav>
+      <ul id="nav-links">
+        <li>
+          <a href="index.html">Sentiment Indicators
+            <span class="seta">&#9660;</span>
+          </a>
+        </li>
+        <li><a href="index.html#contact" id="nav-contact">Contact</a></li>
+        <ul class="dropdown-content">
+          <li><a href="index.html#fear-greed" id="nav-fear-greed">Fear / Greed Ind.</a></li>
+          <li><a href="index.html#mayer-multiple" id="nav-mayer-multiple">Mayer Multiple</a></li>
+          <li><a href="index.html#bitcoin-dominance" id="nav-dominance">Bitcoin Dominance</a></li>
+        </ul>
+      </ul>
+      <!-- Hamburger menu icon responsive -->
+      <button id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span class="menu-icon" aria-hidden="true">☰</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <section>
+      <p id="header-description"><strong>Real-Time Cryptocurrency Prices: Track the Latest Prices of Top Crypto Market
+          Coins</strong></p>
+    </section>
+
+    <!--anuncio em bloco google adsense-->
+    <div class="ads-container">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9560721874641370"
+        crossorigin="anonymous"></script>
+      <!-- cryptometricstream -->
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9560721874641370" data-ad-slot="4934410327"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <!-- Seção que exibe os preços das criptomoedas -->
+    <section class="prices">
+
+      <!-- Blocos individuais para cada criptomoeda -->
+      <article class="price-card">
+        <h3 id="bitcoin-title">Bitcoin (BTC)</h3>
+        <p>1 Bitcoin is equal to <strong>US<span id="bitcoin-price">Loading...</span></strong></p>
+      </article>
+
+      <article class="price-card">
+        <h3 id="ethereum-title">Ethereum (ETH)</h3>
+        <p>1 Ethereum is equal to <strong>US<span id="ethereum-price">Loading...</span></strong></p>
+      </article>
+
+      <article class="price-card">
+        <h3 id="solana-title">Solana (SOL)</h3>
+        <p>1 Solana is equal to <strong>US<span id="solana-price">Loading...</span></strong></p>
+      </article>
+
+      <article class="price-card">
+        <h3 id="official-trump-title">OFFICIAL TRUMP ($TRUMP)</h3>
+        <p>1 OFFICIAL TRUMP is equal to <strong>US<span id="official-trump-price">Loading...</span></strong></p>
+      </article>
+
+      <!--Melania Trump-->
+      <!--
+      <article class="price-card">
+        <h3 id="melania-trump-title">Melania Trump</h3>
+        <p>1 Melania Trump is equal to <strong>US<span id="melania-trump-price">Loading...</span></strong></p>
+      </article>
+      -->
+
+      <!--anuncio em bloco google adsense-->
+      <div class="ads-container">
+        <script async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9560721874641370"
+          crossorigin="anonymous"></script>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9560721874641370"
+          data-ad-slot="4934410327" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+    </section>
+
+    <!-- Seção que exibe gráficos de preços das criptomoedas 
+    <section class="charts">
+      <h2>Price Charts</h2>
+
+      <div class="chart-container">
+        <canvas id="bitcoin-chart" aria-labelledby="bitcoin-title" width="400" height="200"></canvas>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="ethereum-chart" aria-labelledby="ethereum-title" width="400" height="200"></canvas>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="solana-chart" aria-labelledby="solana-title" width="400" height="200"></canvas>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="official-trump-chart" aria-labelledby="official-trump-title" width="400" height="200"></canvas>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="melania-trump-chart" aria-labelledby="melania-trump-title" width="400" height="200"></canvas>
+      </div>
+    </section>
+  -->
+
+    <section>
+      <article id="crypto-text">
+        <h3>What are Cryptocurrencies?</h3>
+
+        <p>Cryptocurrencies are decentralized digital currencies that use blockchain technology to ensure security,
+          transparency, and immutability in transactions. Unlike traditional currencies, such as the dollar or the euro,
+          they are not
+          controlled by governments or central banks. Some of the most popular cryptocurrencies include <strong>Bitcoin
+            (BTC)</strong>, the pioneer and main market reference, <strong>Ethereum (ETH)</strong>, which introduced
+          smart
+          contracts, and <strong>Solana (SOL)</strong>, known for its high speed and scalability.</p>
+
+
+        <!--anuncio in-article google adsense-->
+        <script async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9560721874641370"
+          crossorigin="anonymous"></script>
+        <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+          data-ad-format="fluid" data-ad-client="ca-pub-9560721874641370" data-ad-slot="3767723765"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+        <h3>How do Cryptocurrencies Work?</h3>
+
+        <p>Cryptocurrencies operate on decentralized networks based on <strong>blockchain</strong> technology, which
+          functions
+          as a digital ledger that records all transactions securely and transparently. Each transaction is validated
+          by a network of computers (nodes) through mechanisms like <strong>Proof of Work (PoW)</strong>, used by
+          Bitcoin, or <strong>Proof of Stake (PoS)</strong>, adopted by Ethereum 2.0 and Solana. This eliminates
+          financial intermediaries, making operations more efficient and accessible globally.</p>
+
+        <h3>Advantages of Tracking Cryptocurrency Prices in Real Time</h3>
+
+        <p>The cryptocurrency market is highly volatile, with prices that can vary significantly in short periods.
+          Monitoring prices in real time brings several benefits for investors, including:</p>
+
+        <ul>
+          <li><strong>Quick Decision Making</strong>: Rapid price movements can present lucrative buy or sell
+            opportunities.
+          </li>
+          <li><strong>Trend Analysis</strong>: Tracking price history allows for identifying patterns and predicting
+            possible market movements.</li>
+          <li><strong>Risk Management</strong>: By observing sharp fluctuations, investors can adjust their strategies
+            and
+            protect their assets.</li>
+          <li><strong>Exploiting Arbitrage</strong>: Price differences between exchanges can create arbitrage
+            opportunities,
+            increasing profits.</li>
+        </ul>
+
+        <!--anuncio in-article google adsense-->
+        <script async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9560721874641370"
+          crossorigin="anonymous"></script>
+        <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+          data-ad-format="fluid" data-ad-client="ca-pub-9560721874641370" data-ad-slot="3767723765"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+        <h3>How Tracking Prices in Real Time Can Help with Investments</h3>
+
+        <p>Well-informed investors can optimize their strategies by tracking real-time quotes, enabling more
+          in-depth analysis.</p>
+
+        <p>Additionally, using tools like <strong><a href="index.html">sentiment indicators</a></strong> helps identify
+          strategic moments to buy or
+          sell.
+          Whether for short-term trading or long-term investing (hold), consistently tracking the market is essential to
+          maximize returns and reduce risks.</p>
+
+        <p>With the rise of <strong>digital finance</strong>, understanding how cryptocurrencies work and staying
+          updated on their fluctuations has become a key differentiator for any investor looking to take advantage of
+          the
+          opportunities in this dynamic and innovative sector.</p>
+      </article>
+    </section>
+
+    <!--anuncio multiplex google adsense-->
+    <div class="ads-container">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9560721874641370"
+        crossorigin="anonymous"></script>
+      <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+        data-ad-client="ca-pub-9560721874641370" data-ad-slot="1106466054"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </main>
+
+  <!-- Rodapé do site -->
+  <footer>
+    <p id="footer-rights">&copy; 2024 - CryptometricStream. All rights reserved. <a href="privacy-policy.html"
+        id="footer-privacy-policy">Privacy Policy</a></p>
+  </footer>
+
+  <script>
+    // Configuração do Cookie Consent
+    window.addEventListener("load", function () {
+      window.cookieconsent.initialise({
+        palette: {
+          popup: { background: "#343a40", text: "#f8f9fa" },
+          button: { background: "#007bff", text: "#ffffff" },
+        },
+        theme: "classic",
+        position: "bottom-left",
+        content: {
+          message:
+            "We use cookies to personalize content, ads, and provide a better experience.",
+          dismiss: "Agree",
+          deny: "Decline",
+          link: "Learn more",
+          href: "privacy-policy.html",
+        },
+        type: "opt-in", // Exigir consentimento ativo para cookies
+        onInitialise: function (status) {
+          if (this.hasConsented()) {
+            enableCookies();
+          }
+        },
+        onStatusChange: function (status) {
+          if (this.hasConsented()) {
+            enableCookies();
+          } else {
+            disableCookies();
+          }
+        },
+      });
+    });
+
+    function enableCookies() {
+      // Aqui você pode habilitar os cookies de rastreamento/funcionais
+      gtag("consent", "update", {
+        ad_storage: "granted",
+        analytics_storage: "granted",
+      });
+    }
+
+    function disableCookies() {
+      // Aqui você pode desativar os cookies de rastreamento/funcionais
+      gtag("consent", "update", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+      });
+    }
+  </script>
+</body>
+
+</html>

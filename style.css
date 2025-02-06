@@ -1,4 +1,23 @@
-/* Reseta margens e paddings padrão */
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  /* Definição das cores como variáveis */
+  --text-color: #ffffff;
+  --primary-color: #F7931A; /* Cor principal (Bitcoin) */
+  --background-color: #121212;
+  --secondary-text-color: #e0e0e0;
+  --secondary-background: #1e1e1e;
+  --highlight-color: #ffae42; /* Cor de destaque */
+  --error-color: #f8d7da;
+  --error-text-color: #721c24;
+  --success-color: #d4edda;
+  --success-text-color: #155724;
+  --button-hover-color: #45a049;
+  --background-subcategory: #121212cc;
+  --hover-background-subcategory: #ffae424d;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,23 +26,19 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #121212;
-  color: #ffffff;
-  margin: 0;
-  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-/* Header */
 header {
   text-align: center;
-  background-color: #F7931A; /* Cor do Bitcoin */
+  background-color: var(--primary-color);
   padding: 20px;
   margin-bottom: 30px;
 
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-
 }
 
 header #logotipo {
@@ -31,22 +46,33 @@ header #logotipo {
 }
 
 header .logo {
-  height: 50px; /* Tamanho do logo */
+  height: 50px;
   width: auto;
 }
 
 header h1 {
   font-size: 2.5rem;
-  color: #fff;
+  color: var(--text-color);
 }
 
 header p {
   font-size: 1.2rem;
-  color: #fff;
+  color: var(--text-color);
 }
 
+/*Menu navegável index.html*/
 nav {
   margin-top: 10px;
+}
+
+#nav-links {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  position: relative; /* Importante para o posicionamento do dropdown */
+  display: inline-block; /* Ou block, dependendo do layout */
 }
 
 nav ul {
@@ -63,22 +89,79 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #fff;
+  color: var(--text-color);
   font-weight: bold;
   font-size: 1rem;
-  transition: color 0.3s ease-in-out, transform 0.2s;
-}
+  transition: color 0.1s ease-in-out, transform 0.2s;
+  padding: 10px 15px; 
+} 
 
 nav ul li a:hover {
-  color: #121212;
+  color: var(--background-color);
+}
+
+/*Menu navegável price.html*/
+.seta {
+  color: white;
+  transition:color 0.1s ease-in-out, transform 0.2s;
+  cursor: pointer;
+  margin-left: 5px;
+  display: inline-block;
+}
+
+nav ul li a:hover .seta {
+  color: var(--background-color);
+  transform: rotate(180deg); /* Rotação da seta */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 80%; /* Posiciona o menu abaixo do link */
+  left: 5%; /* Alinha o menu com a borda esquerda do link */
+  max-width: max-content;
+  z-index: 1;
+  background-color: var(--background-subcategory);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+
+.dropdown-content a {
+  color: var(--secondary-text-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--hover-background-subcategory);
+  color: var(--text-color);
+}
+
+#nav-links:hover .dropdown-content {
+  display: block; /* Exibe as subcategorias */
+}
+
+#nav-links:hover .dropdown-content:hover {
+    display: block; /* Mantém as subcategorias abertas */
+}
+
+#menu-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  display: none;
 }
 
 .ads-container {
   text-align: center;
 }
-/* Seções */
-section {
-  background-color: #1e1e1e;
+
+article, #header-description {
+  background-color: var(--secondary-background);
   margin: 20px auto;
   padding: 20px;
   border-radius: 10px;
@@ -86,10 +169,15 @@ section {
   max-width: 800px;
 }
 
+.price-card {
+  display: flex;
+  justify-content: space-between;
+}
+
 h2 {
   font-size: 1.8rem;
   margin-bottom: 10px;
-  color: #F7931A;
+  color: var(--primary-color);
 }
 
 .indicator {
@@ -105,34 +193,34 @@ h2 {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #fff;
+  color: var(--text-color);
 }
 
 p {
   font-size: 1rem;
-  color: #e0e0e0;
+  color: var(--secondary-text-color);
 }
 
-/*espaçamento sem utilizar tag br*/
 #fear-greed-text p, 
 #mayer-multiple-text p, 
-#bitcoin-dominance-text p {
+#bitcoin-dominance-text p,
+#crypto-text p {
   margin: 0.75rem 0;
 }
 
 #fear-greed-text ul li, 
 #mayer-multiple-text ul li, 
-#bitcoin-dominance-text ul li {
-  padding-left: 0; /* Remove o recuo padrão */
-  margin-left: 0;  /* Remove a margem padrão */
-  list-style-position: inside; /* Faz as bolinhas ficarem alinhadas ao texto */
+#bitcoin-dominance-text ul li,
+#crypto-text ul li {
+  padding-left: 0;
+  margin-left: 0;
+  list-style-position: inside;
 }
 
 h3 {
-  color: #F7931A;
+  color: var(--primary-color);
 }
 
-/* Campo de Contato */
 form {
   display: flex;
   flex-direction: column;
@@ -142,7 +230,7 @@ form {
 
 form label {
   font-size: 1rem;
-  color: #fff;
+  color: var(--text-color);
 }
 
 form input,
@@ -151,43 +239,41 @@ form textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #1e1e1e;
-  color: #fff;
+  background-color: var(--secondary-background);
+  color: var(--text-color);
 }
 
 form button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #F7931A;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--text-color);
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 form button:hover {
-  background-color: #ffae42;
+  background-color: var(--highlight-color);
 }
 
 form button:active {
-  transform: scale(0.98); /* Efeito de clique */
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Realça o clique */
+  transform: scale(0.98);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 form input:focus,
 form textarea:focus {
-  border-color: #ffae42;
-  outline: none; /* Remove a borda padrão do navegador */
-  box-shadow: 0 0 5px rgba(247, 147, 26, 0.8); /* Destaca o campo ativo */
+  border-color: var(--highlight-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(247, 147, 26, 0.8);
 }
 
-
-/* Rodapé */
 footer {
   text-align: center;
-  background-color: #121212;
-  color: #fff;
+  background-color: var(--background-color);
+  color: var(--text-color);
   padding: 15px;
   margin-top: 30px;
 }
@@ -200,34 +286,32 @@ canvas {
   margin-top: 10px;
 }
 
-/* Estilos para o botão de voltar ao topo */
 #back-to-top {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #F7931A;
+  background-color: var(--primary-color);
   color: white;
   border: none;
-  border-radius: 50%; /* Garante o formato redondo */
-  padding: 15px; /* Tamanho do botão ajustado para maior área de clique */
-  font-size: 30px; /* Maior tamanho de texto para facilitar o clique */
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 30px;
   cursor: pointer;
-  display: none; /* Inicialmente escondido */
+  display: none;
   z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar um destaque */
-  transition: background-color 0.3s, transform 0.3s; /* Efeito suave ao passar o mouse */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 #back-to-top:hover {
-  background-color: #45a049;
-  transform: scale(1.1); /* Aumenta levemente o botão ao passar o mouse */
+  background-color: var(--button-hover-color);
+  transform: scale(1.1);
 }
 
 #back-to-top:focus {
-  outline: 3px solid #ffae42; /* Indicador de foco para acessibilidade */
+  outline: 3px solid var(--highlight-color);
 }
 
-/* Feedback de sucesso e erro */
 .feedback {
   margin: 20px auto;
   padding: 15px;
@@ -239,61 +323,36 @@ canvas {
 }
 
 .feedback.success {
-  background-color: #d4edda;
-  color: #155724;
+  background-color: var(--success-color);
+  color: var(--success-text-color);
   border: 1px solid #c3e6cb;
 }
 
 .feedback.error {
-  background-color: #f8d7da;
-  color: #721c24;
+  background-color: var(--error-color);
+  color: var(--error-text-color);
   border: 1px solid #f5c6cb;
-}
-
-/* Estilos para o botão de menu e links */
-#menu-toggle {
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: #333;
-  cursor: pointer;
-  display: none; /* O botão de menu está escondido por padrão */
-}
-
-#nav-links {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 #nav-links li {
   margin-right: 20px;
 }
 
-#nav-links a {
-  text-decoration: none;
-  color: #fff;
-  padding: 10px 15px;
-}
-
-/* Estilos para telas maiores (acima de 768px) */
 @media (min-width: 769px) {
   #menu-toggle {
-    display: none; /* Esconde o botão hambúrguer em telas maiores */
+    display: none;
   }
 
   #nav-links {
-    display: flex; /* Exibe os links lado a lado em telas maiores */
-    justify-content: center; /* Ajuste para centralizar os links */
+    display: flex;
+    justify-content: center;
   }
 
   #nav-links li {
-    margin-right: 20px; /* Ajuste do espaço entre os links */
+    margin-right: 20px;
   }
 }
 
-/* Ajustes para telas pequenas */
 @media (max-width: 768px) {
   header h1 {
     font-size: 2rem;
@@ -304,9 +363,9 @@ canvas {
     gap: 10px;
   }
 
-  section {
-    margin: 40px auto; /* Aumentado para separar visualmente as seções */
-    padding: 30px; /* Mais espaço interno */
+  article, #header-description {
+    margin: 40px auto;
+    padding: 30px;
   }
 
   .indicator {
@@ -321,39 +380,39 @@ canvas {
   }
 
   #menu-toggle {
-    display: block; /* Exibe o botão de menu em telas pequenas */
+    display: block;
   }
 
   #nav-links {
-    display: none; 
-    flex-direction: row;
+    display: none;
+    flex-direction: column;
     position: absolute;
-    top: 80px; /* Ajuste conforme a altura do menu */
-    left: 0;
-    background-color: #fff;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    justify-content: space-around; /* Garante que os links fiquem lado a lado */
+    top: 80px;
+    right: 0;
+    max-width: max-content;
+    z-index: 1;
+    justify-content: space-around;
+
+    background-color: var(--background-subcategory);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 8px;
   }
 
   #nav-links li {
     text-align: center;
     padding: 15px 0;
-    margin-right: 10px; /* Ajuste no espaço entre os links */
+    margin-right: 10px;
   }
 
   #nav-links li a {
-    color: #121212;
+    color: var(--secondary-text-color);
   }
 
-  /* Quando o menu for visível */
   #nav-links.show {
-    display: flex; /* Exibe os links */
+    display: flex;
   }
 
-  /* Estilo de foco para acessibilidade */
-  #menu-toggle:focus {
-    outline: 3px solid #ffbf47; /* Foco no botão do menu */
+  .seta, .dropdown-content {
+    display: none;
   }
 }
