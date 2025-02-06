@@ -16,6 +16,14 @@
         <priority>0.8</priority>
     </url>
     
+    <!-- Página de preços -->
+    <url>
+        <loc>https://cryptometricstream.com/price</loc>
+        <lastmod>2025-02-06</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
     <!-- Página de política de privacidade -->
     <url>
         <loc>https://cryptometricstream.com/privacy-policy</loc>
