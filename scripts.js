@@ -65,8 +65,12 @@ async function fetchHistoricalData() {
     "official-trump",
     "melania-trump",
   ]
-  const startDate = "2023-01-01" // Exemplo de data de início
-  const endDate = "2023-12-31" // Exemplo de data de fim
+  // Use the most recent 12 months instead of a fixed, outdated 2023 range.
+  const end = new Date()
+  const start = new Date()
+  start.setFullYear(start.getFullYear() - 1)
+  const startDate = start.toISOString().slice(0, 10)
+  const endDate = end.toISOString().slice(0, 10)
 
   for (let i = 0; i < cryptoIds.length; i++) {
     const id = cryptoIds[i]
@@ -112,7 +116,7 @@ function createChart(chartId, labels, data) {
         {
           label: "Preço em USD",
           data: data,
-          borderColor: "var(--primary-color)",
+          borderColor: "#F7931A",
           fill: false,
           borderWidth: 2,
           pointRadius: 0,
